@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anonymous Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Anonymous Chat</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <p>Talk to strangers!</p>
+
+      <!-- GENDER SELECTION SECTION -->
+      <label for="gender-selection"><strong>Gender</strong></label>
+      <div id="gender-selection">
+        <label>
+          <input type="checkbox" name="gender" value="male" />
+          Male
+        </label>
+        <label>
+          <input type="checkbox" name="gender" value="female" />
+          Female
+        </label>
+        <label>
+          <input type="checkbox" name="gender" value="other" />
+          Other
+        </label>
+      </div>
+
+      <!-- BUTTONS FOR TEXT/VIDEO CHAT -->
+      <div class="buttons">
+        <button id="textChatBtn" class="button">Text Chat</button>
+        <button id="videoChatBtn" class="button">Video Chat</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Anonymous Chat</p>
+  </footer>
+
+  <script>
+    // 1) Allow only one checkbox to be selected at a time
+    const genderCheckboxes = document.querySelectorAll('input[name="gender"]');
+    genderCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          // Uncheck all others
+          genderCheckboxes.forEach((other) => {
+            if (other !== this) {
+              other.checked = false;
+            }
+          });
+        }
+      });
+    });
+
+    // 2) Function to get the selected gender or default to "any"
+    function getSelectedGender() {
+      let selectedValue = 'any'; // Default if none are checked
+      genderCheckboxes.forEach((cb) => {
+        if (cb.checked) {
+          selectedValue = cb.value;
+        }
+      });
+      return selectedValue;
+    }
+
+    // 3) Handle the Text Chat button
+    document.getElementById('textChatBtn').addEventListener('click', () => {
+      const gender = getSelectedGender();
+      // Redirect to text-chat.html with ?gender=<value>
+      window.location.href = `text-chat.html?gender=${gender}`;
+    });
+
+    // 4) Handle the Video Chat button
+    document.getElementById('videoChatBtn').addEventListener('click', () => {
+      const gender = getSelectedGender();
+      // Redirect to video-chat.html with ?gender=<value>
+      window.location.href = `video-chat.html?gender=${gender}`;
+    });
+  </script>
+</body>
+</html>

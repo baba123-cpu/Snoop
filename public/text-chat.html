@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snoop - Text Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-button">Back to Home</a>
+    <h1>Snoop Text Chat</h1>
+  </header>
+  <main>
+    <!-- Chat window -->
+    <div id="chat-window"></div>
+    
+    <!-- Message input area -->
+    <div id="input-area">
+      <input type="text" id="message-input" placeholder="Wait..." />
+      <button id="send-button">Send</button>
+    </div>
+    
+    <!-- Control buttons: Report, Stop, Next (Next button is now always visible) -->
+    <div class="control-buttons">
+      <button id="report-button">Report</button>
+      <button id="stop-button">Stop</button>
+      <button id="next-button">Next</button>
+    </div>
+  </main>
+
+  <!-- REPORT MODAL -->
+  <div id="report-modal" class="modal">
+    <div class="modal-content">
+      <h2>Report Reason</h2>
+      <form id="report-form">
+        <label class="radio-label">
+          <input type="radio" name="reason" value="Pornography" />
+          Pornography
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="reason" value="Abusing" />
+          Abusing
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="reason" value="Hate speech" />
+          Hate speech
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="reason" value="Violence" />
+          Violence
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="reason" value="Spam" />
+          Spam
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="reason" value="Other" />
+          Other reason:
+          <input type="text" id="other-text" placeholder="Describe reason..." />
+        </label>
+        <div class="modal-buttons">
+          <button type="submit" id="submit-report" disabled>Submit</button>
+          <button type="button" id="cancel-report">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END REPORT MODAL -->
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="text-chat.js"></script>
+</body>
+</html>

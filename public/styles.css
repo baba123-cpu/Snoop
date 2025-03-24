@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Homepage Styles */
+  .container {
+    text-align: center;
+  }
+  
+  .buttons {
+    margin-top: 2rem;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Chat Page Styles */
+  #chat-window {
+    height: 70vh;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  #input-area {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  #message-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+  }
+  
+  #send-button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .new-chat {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Video Chat Page Styles */
+  #video-area {
+    position: relative;
+    height: 60vh;
+    background-color: black;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  #local-video, #remote-video {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #controls {
+    position: relative;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #mute-button, #camera-button, #end-button, #report-button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  /* ===== Modal Styles ===== */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 1rem;
+    border-radius: 4px;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .radio-label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  #other-text {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: flex-end;
+  }
+  .container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  #gender-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* or center, as you prefer */
+    margin: 1rem auto;
+    gap: 0.5rem;
+    max-width: 200px; /* adjust as needed */
+  }
+  
+  .buttons {
+    margin-top: 2rem;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
